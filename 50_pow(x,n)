@@ -1,0 +1,12 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        N = abs(n)
+        ans = 1.0
+
+        while N:
+            if N % 2 == 1:
+                ans *= x
+            x *= x
+            N //= 2
+
+        return ans if n >= 0 else 1 / ans
